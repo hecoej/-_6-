@@ -28,17 +28,17 @@ void loop() {
   Serial.println("cm");
 
   digitalWrite(traffic_red, LOW);
-  digitalWrite(traffic_yellow, LOW);
+  digitalWrite(traffic_yellow, HIGH);
   digitalWrite(traffic_green, LOW);
-
-  if(distance < 20){
-    digitalWrite(traffic_red, HIGH);
+  
+  if(distance < 16){
+    digitalWrite(traffic_red, HIGH); //GREEN
   }
-  else if(distance >= 20 && distance < 40){
-    digitalWrite(traffic_yellow, HIGH);
-  }
-  else if(distance > 40){
-    digitalWrite(traffic_green, HIGH);
+  // else if(distance >= 20 && distance < 25){
+  //   digitalWrite(traffic_yellow, HIGH); //X
+  // }
+  else if(distance > 16){
+    digitalWrite(traffic_green, HIGH); //RED
   }
   delay(200);
 }
